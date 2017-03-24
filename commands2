@@ -1,0 +1,102 @@
+    1  $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
+    2  echo $HADOOP_HOME
+    3  $HADOOP_PREFIX/sbin/mr-jobhistory-daemon.sh start historyserver
+    4  ls /usr/local/hadoop
+    5  ls /usr/local/hadoop/share/
+    6  ls /usr/local/hadoop/share/hadoop/
+    7  ls /usr/local/hadoop/share/hadoop/mapreduce/
+    8  ls /usr/local/hadoop/sbin/
+    9  sh /usr/local/hadoop/sbin/mr-jobhistory-daemon.sh 
+   10  $HADOOP_PREFIX/sbin/mr-jobhistory-daemon.sh start historyserver
+   11  inspect 1063.
+   12  inspect 1063
+   13  ss -l -p -n | grep ",1063,"
+   14  ls
+   15  cd $HADOOP_PATH
+   16  ls
+   17  cd $HADOOP_PREFIX
+   18  ls
+   19  cd lab4
+   20  s
+   21  ls
+   22  cd add
+   23  sh ./run.sh 
+   24  ./../bin/hadoop
+   25  ls
+   26  ./../../bin/hadoop fs -ls
+   27  sh ./run.sh add_output
+   28  ls
+   29  ./../../bin/hadoop fs -ls input
+   30  ./../../bin/hadoop fs -rm input
+   31  ./../../bin/hadoop fs -rm -r -f input
+   32  ./../../bin/hadoop fs -rm input
+   33  ./../../bin/hadoop fs -put ./../purchases.txt input/purchases.txt
+   34  ls
+   35  sh ./run.sh add_output
+   36  ./../../bin/hadoop fs -ls
+   37  ./../../bin/hadoop fs -ls add_output
+   38  ./../../bin/hadoop fs -cat add_output/part-00000
+   39  pwd
+   40  cd ../rank/
+   41  ls
+   42  sh ./run.sh rank_out
+   43  ./../../bin/hadoop fs -ls rank_out
+   44  ./../../bin/hadoop fs -cat rank_out/_SUCCESS
+   45  ./../../bin/hadoop fs -cat add_out/_SUCCESS
+   46  ./../../bin/hadoop fs -ls 
+   47  ./../../bin/hadoop fs -cat add_output/_SUCCESS
+   48  ./../../bin/hadoop fs -ls add_output
+   49  ./../../bin/hadoop fs -ls add_output/part-00000
+   50  ./../../bin/hadoop fs -cat add_output/part-00000
+   51  ./../../bin/hadoop fs -cat rank_out/part-00000
+   52  ls
+   53  pwd
+   54  sh ./run.sh rank_out_1
+   55  ./../../bin/hadoop fs -cat rank_out_1/part-00000
+   56  sh ./run.sh rank_out_2
+   57  ./../../bin/hadoop fs -cat rank_out_2/part-00000
+   58  sh ./run.sh rank_out_3
+   59  ./../../bin/hadoop fs -cat rank_out_3/part-00000
+   60  head -50 ./../purchases.txt | python mapper.py | sort | python reducer.py 
+   61  sh ./run.sh rank_out_4
+   62  ./../../bin/hadoop fs -cat rank_out_4/part-00000
+   63  sh ./run.sh rank_out_5
+   64  sh ./run.sh rank_out_6
+   65  head -50 ./../purchases.txt | python mapper.py | sort | python reducer.py 
+   66  head -50 ./../purchases.txt | python mapper.py | sort | python reducer.py 
+   67  head -50 ./../purchases.txt | python mapper.py | sort | python reducer.py 
+   68  sh ./run.sh rank_out_7
+   69  ./../../bin/hadoop fs -cat rank_out_7/part-00000
+   70  ./../../bin/hadoop fs -get rank_out_7/part-00000 rank_out
+   71  ls
+   72  rm -rf test.txt
+   73  ls
+   74  cd ../
+   75  cd add
+   76  ./../../bin/hadoop fs -get add_output/part-00000 add_out
+   77  ls
+   78  ./../../bin/hadoop fs -ls add_output
+   79  ./../../bin/hadoop fs -cat add_output/part-00000
+   80  ./../../bin/hadoop fs -get add_output/part-00000 add_output
+   81  ls
+   82  rm -rf add_out add_output 
+   83  ./../../bin/hadoop fs -get add_output/part-00000 add_output
+   84  ls
+   85  cat add_output 
+   86  ls
+   87  cd ..
+   88  git init
+   89  exit
+   90  ls HADOOP_PREFIX
+   91  ls $HADOOP_PREFIX
+   92  ls $HADOOP_PREFIX/logs
+   93  cd $HADOOP_PREFIX/logs
+   94  pwd
+   95  cd
+   96  ls
+   97  exit
+   98  ls
+   99  history
+  100  cd ../
+  101  pwd
+  102  history > commands
