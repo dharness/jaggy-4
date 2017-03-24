@@ -1,0 +1,77 @@
+2017-03-23 20:30:08,442 WARN [main] org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-03-23 20:30:08,572 INFO [main] org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2017-03-23 20:30:08,664 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2017-03-23 20:30:08,664 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: ReduceTask metrics system started
+2017-03-23 20:30:08,677 INFO [main] org.apache.hadoop.mapred.YarnChild: Executing with tokens:
+2017-03-23 20:30:08,678 INFO [main] org.apache.hadoop.mapred.YarnChild: Kind: mapreduce.job, Service: job_1490313515759_0004, Ident: (org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier@57a8551)
+2017-03-23 20:30:08,803 INFO [main] org.apache.hadoop.mapred.YarnChild: Sleeping for 0ms before retrying again. Got null now.
+2017-03-23 20:30:09,162 INFO [main] org.apache.hadoop.mapred.YarnChild: mapreduce.cluster.local.dir for child: /tmp/hadoop-root/nm-local-dir/usercache/root/appcache/application_1490313515759_0004
+2017-03-23 20:30:09,664 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
+2017-03-23 20:30:10,198 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: File Output Committer Algorithm version is 1
+2017-03-23 20:30:10,211 INFO [main] org.apache.hadoop.mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2017-03-23 20:30:10,227 INFO [main] org.apache.hadoop.mapred.ReduceTask: Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@76186a96
+2017-03-23 20:30:10,736 INFO [main] org.apache.hadoop.streaming.PipeMapRed: PipeMapRed exec [/usr/bin/python, reducer.py]
+2017-03-23 20:30:10,744 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+2017-03-23 20:30:10,745 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+2017-03-23 20:30:10,747 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+2017-03-23 20:30:10,752 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.local.dir is deprecated. Instead, use mapreduce.cluster.local.dir
+2017-03-23 20:30:10,754 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+2017-03-23 20:30:10,757 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.cache.localFiles is deprecated. Instead, use mapreduce.job.cache.local.files
+2017-03-23 20:30:10,757 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+2017-03-23 20:30:10,762 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+2017-03-23 20:30:10,763 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+2017-03-23 20:30:10,766 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: job.local.dir is deprecated. Instead, use mapreduce.job.local.dir
+2017-03-23 20:30:10,767 INFO [main] org.apache.hadoop.conf.Configuration.deprecation: mapred.work.output.dir is deprecated. Instead, use mapreduce.task.output.dir
+2017-03-23 20:30:11,767 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1/0/0 in:NA [rec/s] out:NA [rec/s]
+2017-03-23 20:30:11,768 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=10/0/0 in:NA [rec/s] out:NA [rec/s]
+2017-03-23 20:30:11,772 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=100/0/0 in:NA [rec/s] out:NA [rec/s]
+2017-03-23 20:30:11,813 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1000/0/0 in:1000=1000/1 [rec/s] out:0=0/1 [rec/s]
+2017-03-23 20:30:12,009 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=10000/0/0 in:10000=10000/1 [rec/s] out:0=0/1 [rec/s]
+2017-03-23 20:30:12,356 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=100000/0/0 in:100000=100000/1 [rec/s] out:0=0/1 [rec/s]
+2017-03-23 20:30:12,622 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=200000/0/0 in:200000=200000/1 [rec/s] out:0=0/1 [rec/s]
+2017-03-23 20:30:12,889 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=300000/0/0 in:150000=300000/2 [rec/s] out:0=0/2 [rec/s]
+2017-03-23 20:30:13,167 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=400000/0/0 in:200000=400000/2 [rec/s] out:0=0/2 [rec/s]
+2017-03-23 20:30:13,452 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=500000/0/0 in:250000=500000/2 [rec/s] out:0=0/2 [rec/s]
+2017-03-23 20:30:13,793 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=600000/0/0 in:200000=600000/3 [rec/s] out:0=0/3 [rec/s]
+2017-03-23 20:30:14,109 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=700000/0/0 in:233333=700000/3 [rec/s] out:0=0/3 [rec/s]
+2017-03-23 20:30:14,409 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=800000/0/0 in:266666=800000/3 [rec/s] out:0=0/3 [rec/s]
+2017-03-23 20:30:14,769 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=900000/0/0 in:300000=900000/3 [rec/s] out:0=0/3 [rec/s]
+2017-03-23 20:30:15,038 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1000000/0/0 in:250000=1000000/4 [rec/s] out:0=0/4 [rec/s]
+2017-03-23 20:30:15,306 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1100000/0/0 in:275000=1100000/4 [rec/s] out:0=0/4 [rec/s]
+2017-03-23 20:30:15,567 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1200000/0/0 in:300000=1200000/4 [rec/s] out:0=0/4 [rec/s]
+2017-03-23 20:30:15,826 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1300000/0/0 in:260000=1300000/5 [rec/s] out:0=0/5 [rec/s]
+2017-03-23 20:30:16,104 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1400000/0/0 in:280000=1400000/5 [rec/s] out:0=0/5 [rec/s]
+2017-03-23 20:30:16,412 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1500000/0/0 in:300000=1500000/5 [rec/s] out:0=0/5 [rec/s]
+2017-03-23 20:30:16,767 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1600000/0/0 in:320000=1600000/5 [rec/s] out:0=0/5 [rec/s]
+2017-03-23 20:30:17,126 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1700000/0/0 in:283333=1700000/6 [rec/s] out:0=0/6 [rec/s]
+2017-03-23 20:30:17,477 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1800000/0/0 in:300000=1800000/6 [rec/s] out:0=0/6 [rec/s]
+2017-03-23 20:30:17,833 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=1900000/0/0 in:271428=1900000/7 [rec/s] out:0=0/7 [rec/s]
+2017-03-23 20:30:18,190 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2000000/0/0 in:285714=2000000/7 [rec/s] out:0=0/7 [rec/s]
+2017-03-23 20:30:18,556 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2100000/0/0 in:300000=2100000/7 [rec/s] out:0=0/7 [rec/s]
+2017-03-23 20:30:18,910 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2200000/0/0 in:275000=2200000/8 [rec/s] out:0=0/8 [rec/s]
+2017-03-23 20:30:19,258 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2300000/0/0 in:287500=2300000/8 [rec/s] out:0=0/8 [rec/s]
+2017-03-23 20:30:19,612 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2400000/0/0 in:300000=2400000/8 [rec/s] out:0=0/8 [rec/s]
+2017-03-23 20:30:19,963 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2500000/0/0 in:277777=2500000/9 [rec/s] out:0=0/9 [rec/s]
+2017-03-23 20:30:20,220 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2600000/0/0 in:288888=2600000/9 [rec/s] out:0=0/9 [rec/s]
+2017-03-23 20:30:20,491 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2700000/0/0 in:300000=2700000/9 [rec/s] out:0=0/9 [rec/s]
+2017-03-23 20:30:20,765 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2800000/0/0 in:311111=2800000/9 [rec/s] out:0=0/9 [rec/s]
+2017-03-23 20:30:21,090 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=2900000/0/0 in:290000=2900000/10 [rec/s] out:0=0/10 [rec/s]
+2017-03-23 20:30:21,380 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3000000/0/0 in:300000=3000000/10 [rec/s] out:0=0/10 [rec/s]
+2017-03-23 20:30:21,648 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3100000/0/0 in:310000=3100000/10 [rec/s] out:0=0/10 [rec/s]
+2017-03-23 20:30:21,927 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3200000/0/0 in:290909=3200000/11 [rec/s] out:0=0/11 [rec/s]
+2017-03-23 20:30:22,201 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3300000/0/0 in:300000=3300000/11 [rec/s] out:0=0/11 [rec/s]
+2017-03-23 20:30:22,552 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3400000/0/0 in:309090=3400000/11 [rec/s] out:0=0/11 [rec/s]
+2017-03-23 20:30:22,916 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3500000/0/0 in:291666=3500000/12 [rec/s] out:0=0/12 [rec/s]
+2017-03-23 20:30:23,227 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3600000/0/0 in:300000=3600000/12 [rec/s] out:0=0/12 [rec/s]
+2017-03-23 20:30:23,543 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3700000/0/0 in:308333=3700000/12 [rec/s] out:0=0/12 [rec/s]
+2017-03-23 20:30:23,812 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3800000/0/0 in:292307=3800000/13 [rec/s] out:0=0/13 [rec/s]
+2017-03-23 20:30:24,084 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=3900000/0/0 in:300000=3900000/13 [rec/s] out:0=0/13 [rec/s]
+2017-03-23 20:30:24,424 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=4000000/0/0 in:307692=4000000/13 [rec/s] out:0=0/13 [rec/s]
+2017-03-23 20:30:24,749 INFO [main] org.apache.hadoop.streaming.PipeMapRed: R/W/S=4100000/0/0 in:315384=4100000/13 [rec/s] out:0=0/13 [rec/s]
+2017-03-23 20:30:24,915 INFO [Thread-24] org.apache.hadoop.streaming.PipeMapRed: MRErrorThread done
+2017-03-23 20:30:24,918 INFO [Thread-23] org.apache.hadoop.streaming.PipeMapRed: Records R/W=4138476/1
+2017-03-23 20:30:24,921 INFO [main] org.apache.hadoop.streaming.PipeMapRed: mapRedFinished
+2017-03-23 20:30:25,137 INFO [main] org.apache.hadoop.mapred.Task: Task:attempt_1490313515759_0004_r_000000_0 is done. And is in the process of committing
+2017-03-23 20:30:25,156 INFO [main] org.apache.hadoop.mapred.Task: Task attempt_1490313515759_0004_r_000000_0 is allowed to commit now
+2017-03-23 20:30:25,179 INFO [main] org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter: Saved output of task 'attempt_1490313515759_0004_r_000000_0' to hdfs://240008d2487e:9000/user/root/rank_out_1/_temporary/1/task_1490313515759_0004_r_000000
+2017-03-23 20:30:25,194 INFO [main] org.apache.hadoop.mapred.Task: Task 'attempt_1490313515759_0004_r_000000_0' done.

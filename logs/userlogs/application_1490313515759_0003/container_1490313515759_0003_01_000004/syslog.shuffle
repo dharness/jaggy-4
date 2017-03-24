@@ -1,0 +1,19 @@
+2017-03-23 20:26:51,790 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: MergerManager: memoryLimit=130652568, maxSingleShuffleLimit=32663142, mergeThreshold=86230696, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2017-03-23 20:26:51,793 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1490313515759_0003_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2017-03-23 20:26:51,804 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: attempt_1490313515759_0003_r_000000_0: Got 2 new map-outputs
+2017-03-23 20:26:51,804 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: Assigning 240008d2487e:13562 with 2 to fetcher#5
+2017-03-23 20:26:51,804 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: assigned 2 of 2 to 240008d2487e:13562 to fetcher#5
+2017-03-23 20:26:51,949 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.Fetcher: for url=13562/mapOutput?job=job_1490313515759_0003&reduce=0&map=attempt_1490313515759_0003_m_000000_0,attempt_1490313515759_0003_m_000001_0 sent hash and received reply
+2017-03-23 20:26:51,953 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: attempt_1490313515759_0003_m_000000_0: Shuffling to disk since 37827380 is greater than maxSingleShuffleLimit (32663142)
+2017-03-23 20:26:51,955 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#5 about to shuffle output of map attempt_1490313515759_0003_m_000000_0 decomp: 37827380 len: 37827384 to DISK
+2017-03-23 20:26:52,086 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.OnDiskMapOutput: Read 37827384 bytes from map-output for attempt_1490313515759_0003_m_000000_0
+2017-03-23 20:26:52,088 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: attempt_1490313515759_0003_m_000001_0: Shuffling to disk since 37831466 is greater than maxSingleShuffleLimit (32663142)
+2017-03-23 20:26:52,089 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.Fetcher: fetcher#5 about to shuffle output of map attempt_1490313515759_0003_m_000001_0 decomp: 37831466 len: 37831470 to DISK
+2017-03-23 20:26:52,214 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.OnDiskMapOutput: Read 37831470 bytes from map-output for attempt_1490313515759_0003_m_000001_0
+2017-03-23 20:26:52,215 INFO [fetcher#5] org.apache.hadoop.mapreduce.task.reduce.ShuffleSchedulerImpl: 240008d2487e:13562 freed by fetcher#5 in 411ms
+2017-03-23 20:26:52,215 INFO [EventFetcher for fetching Map Completion Events] org.apache.hadoop.mapreduce.task.reduce.EventFetcher: EventFetcher is interrupted.. Returning
+2017-03-23 20:26:52,222 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: finalMerge called with 0 in-memory map-outputs and 2 on-disk map-outputs
+2017-03-23 20:26:52,224 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: Merging 2 files, 75658854 bytes from disk
+2017-03-23 20:26:52,225 INFO [main] org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl: Merging 0 segments, 0 bytes from memory into reduce
+2017-03-23 20:26:52,228 INFO [main] org.apache.hadoop.mapred.Merger: Merging 2 sorted segments
+2017-03-23 20:26:52,232 INFO [main] org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 2 segments left of total size: 75658818 bytes

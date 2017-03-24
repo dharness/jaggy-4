@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "reducer.py", line 26, in <module>
+    print ["{0}\t{1}".format(p['payment'], p['amount']) for p in payments].join('\n')
+AttributeError: 'list' object has no attribute 'join'
+log4j:WARN No appenders could be found for logger (org.apache.hadoop.hdfs.DFSClient).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
