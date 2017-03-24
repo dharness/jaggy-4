@@ -1,0 +1,500 @@
+    8  lxc-start c1
+    9  lxc-start -n c1
+   10  lxc-ls -f
+   11  lxc-start c2
+   12  lxc-start -n c2
+   13  iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 8001 -j DNAT --to 10.0.4.162:8001
+   14  iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.4.162:80
+   15  lxc-start -n c1
+   16  lxc-stop -n c1
+   17  iptables -t nat -D PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.4.162:80
+   18  iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.4.131:80
+   19  lxc-start -n c1
+   20  service iptables save
+   21  iptables-save > /etc/iptables.conf
+   22  vim /etc/rc.local
+   23  reboot
+   24  lxc-start -n c1
+   25  iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.4.131:80
+   26  iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 8001 -j DNAT --to 10.0.4.162:8001
+   27  lxc-ls
+   28  lxc-ls -f
+   29  lxc-start -n c2
+   30  lxc-ls -f
+   31  iptables-save
+   32  iptables-save
+   33  iptables-save > /etc/iptables.up.rules
+   34  editor /etc/network/if-pre-up.d/iptables
+   35  vim /etc/network/if-pre-up.d/iptables
+   36   chmod +x /etc/network/if-pre-up.d/iptables
+   37  reboot
+   38  ifconfig
+   39  nano /etc/network/interfaces
+   40  ifup eth0
+   41  mv /etc/network/if-pre-up.d/iptables /tmp
+   42  cat /tmp/iptables 
+   43  ifup eth0
+   44  ls
+   45  lxc-ls
+   46  lxc-attach -n c2
+   47  lxc-start -n c2
+   48  lxc-attach -n c2
+   49  iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 8001 -j DNAT --to 10.0.4.162:8001
+   50  run-parts --test /etc/network/if-pre-up.d
+   51  lxc-ls
+   52  lxc-start c1
+   53  lxc-start -n c1
+   54  lxc-ls
+   55  lxc-ls -f
+   56  iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.4.131:80
+   57  apt-get install iptables-persistent
+   58  reboot
+   59  ls
+   60  lxc-start c1
+   61  lxc-start -n c1
+   62  lxc-start -n c2
+   63  vim /var/lib/lxc/c1/config 
+   64  vim /var/lib/lxc/c2/config 
+   65  ls
+   66  ls
+   67  cat /var/lib/lxc/c1/config 
+   68  vim /var/lib/lxc/c1/config
+   69  vim /var/lib/lxc/c2/config
+   70  lxc-stop -n c2
+   71  lxc-start -n c2
+   72  exit
+   73  exit
+   74  mkdir -p ~/.config/lxc
+   75  echo "lxc.id_map = u 0 100000 65536" > ~/.config/lxc/default.conf
+   76  echo "lxc.id_map = g 0 100000 65536" >> ~/.config/lxc/default.conf
+   77  echo "lxc.network.type = veth" >> ~/.config/lxc/default.conf
+   78  echo "lxc.network.link = lxcbr0" >> ~/.config/lxc/default.conf
+   79  echo $USER
+   80  echo "dharness veth lxcbr0 2" | sudo tee -a /etc/lxc/lxc-usernet
+   81  su -u dharness
+   82  su -u dharness
+   83  su - u dharness
+   84  su - dharness
+   85  lxc-ls
+   86  sudo brctl show
+   87  sudo useradd -s /sbin/bash -c 'unprivileged lxc user' -m dharness
+   88  sudo visudo
+   89  sudo visudo
+   90  sudo visudo
+   91  sudo visudo
+   92  fg
+   93  ls
+   94  su - dharness
+   95  passwd dharness
+   96  su - dharness
+   97  sudo visudo
+   98  su dharness
+   99  ls
+  100  ls home
+  101  ls /home
+  102  cp /var/lib/lxc/c1/config /home/dharness/config-c1
+  103  cp /var/lib/lxc/c2/config /home/dharness/config-c2
+  104  mkdir /home/dharness/lab2
+  105  cp /home/dharness/config-c1 /home/dharness/config-c1
+  106  cp /home/dharness/config-c1 /home/dharness/lab2/config-c1
+  107  cp /home/dharness/config-c2 /home/dharness/lab2/config-c2
+  108  ls
+  109  lxc-info c1
+  110  lxc-info -n c1
+  111  lxc-ls
+  112  lxc-ls -f
+  113  lxc-info -n c1 > /home/dharness/lab2/info-c1
+  114  lxc-info -n c2 > /home/dharness/lab2/info-c2
+  115  lxc-stop c1
+  116  lxc-stop -n c1
+  117  lxc-stop -n c1 --log-files ct.log
+  118  lxc-stop -n c1 --logfile ct.log
+  119  lxc-start -n c1 --logfile ct.log
+  120  lxc-stop -n c2
+  121  lxc-start -n c2 --logfile c2.log
+  122  lxc-stop -n c2
+  123  lxc-stop -n c1
+  124  ls
+  125  mv ct.log c1.log
+  126  less c2.log 
+  127  less c1.log 
+  128  cp c1.log > /home/dharness/lab2/c1.log
+  129  cp c1.log /home/dharness/lab2/c1.log
+  130  cp c2.log /home/dharness/lab2/c2.log
+  131  cd /home/dharness/lab2/
+  132  git init
+  133  git add . --all
+  134  git commit -m 'logs etc'
+  135  git remote add origin git@github.com:dharness/jaggy.git
+  136  git push -u origin master
+  137  git login
+  138  git remote add origin https://github.com/dharness/jaggy.git
+  139  git remote add github https://github.com/dharness/jaggy.git
+  140  git push github master
+  141  cd
+  142  lxc-ls
+  143  lxc-ls -f
+  144  lxc-start c1
+  145  lxc-start -n c1
+  146  lxc-start -n c2
+  147  ls
+  148  rm -rf index.html 
+  149  ls .ssh/authorized_keys 
+  150  cat .ssh/authorized_keys 
+  151  vim .ssh/authorized_keys 
+  152  exit
+  153  exit
+  154  ls
+  155  ls
+  156  lxc-ls
+  157  less c2
+  158  less c2.log 
+  159  exit
+  160  lxc-ls
+  161  lxc-ls --info
+  162  lxc-ls --fancy
+  163  ifonfig
+  164  ifconfig
+  165  iptables -L a
+  166  iptables -t nat
+  167  iptables -h
+  168  iptables -t
+  169  iptables -t nat
+  170  iptables -t
+  171  iptables --list -t nat
+  172  exit
+  173  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add
+  174  exit
+  175  docker network ls
+  176  ifconfig
+  177  docker network ls
+  178  docker network create --subnet=10.0.4.0/24 dylansnetwork
+  179  docker network ls
+  180  docker network inspect dylansnetwork
+  181  docker ps -a
+  182  docker inspect 960373c12a88
+  183  docker inspect --format '{{ .NetworkSettings.IPAddress }}'  960373c12a88
+  184  docker inspect --format '{{ .IPAddress }}'  960373c12a88
+  185  docker inspect --format '{{ IPAddress }}'  960373c12a88
+  186  docker network ls
+  187  docker inspect 960373c12a88
+  188  ls
+  189  docker inspect 960373c12a88
+  190  docker ps -a
+  191  docker inspect e14a0d9fc907
+  192  docker ps -a
+  193  root@ibun:/home/dharness# docker inspect --format '{{ .NetworkSettings.Networks.dharness_default.IPAddress }} e14a0d9fc907
+  194  docker inspect --format '{{ .NetworkSettings.Networks.dharness_default.IPAddress }} e14a0d9fc907
+  195  docker inspect --format '{{ .NetworkSettings.Networks.dharness_default.IPAddress }}' e14a0d9fc907
+  196  docker network ls
+  197  docker network ls
+  198  docker network inspect dylansnetwork
+  199  ls
+  200  ls
+  201  docker ps
+  202  docker inspect e14a0d9fc907
+  203  curl 127.0.0.1:3000
+  204  iptables --list -t nat
+  205  iptables -t nat -D PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.4.131:80
+  206  iptables --list -t nat
+  207  iptables -t nat -D PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.4.162:8001
+  208  iptables --list -t nat
+  209  iptables -t nat -D PREROUTING -i eth0 -p tcp --dport 8001 -j DNAT --to 10.0.4.162:8001
+  210  iptables --list -t nat
+  211  iptables --list -t nat
+  212  ls
+  213  docker ps
+  214  docker inspect e14a0d9fc907
+  215  docker networks ls
+  216  docker network ls
+  217  docker inspect dharness_default
+  218  curl 172.18.0.3:3000
+  219  ls
+  220  docker ps -a
+  221  docker rm 011fdae5a4c8 5c4127e14ca9 e14a0d9fc907 
+  222  ls
+  223  docker ps
+  224  docker inspect 7949499112e1
+  225  docker network create simple-network
+  226  docker network inspect simple-network
+  227  docker network ls
+  228  docker network disconnect dharness_default dylansnetwork simple-network
+  229  docker network disconnect dharness_default
+  230  docker network rm dharness_default
+  231  docker ps -a
+  232  docker ps
+  233  docker-compose down
+  234  docker network rm dharness_default
+  235  docker network ls
+  236  docker network rm dylansnetwork simple-network
+  237  docker network ls
+  238  docker network ls
+  239  docker network ls
+  240  docker network ls
+  241  docker network ls
+  242  docker ps 
+  243  docker inspect 565a4544cff6
+  244  docker ps 
+  245  docker inspect 014dcf00f192
+  246  docker inspect 014dcf00f192
+  247  docker ps -a
+  248  docker inspect 49e0d4290974
+  249  ifconfig
+  250  docker inspect 49e0d4290974
+  251  curl 10.0.4.1:3000
+  252  docker ps
+  253  docker inspect 565a4544cff6
+  254  curl 10.0.4.1
+  255  curl 10.0.4.1:3000
+  256  ping 10.0.4.1
+  257  ping 10.0.4.2
+  258  ping 10.0.4.3
+  259  ping 10.0.4.1
+  260  ping 10.0.4.254
+  261  ping 10.0.4.253
+  262  curl 127.0.0.1:3000
+  263  ls
+  264  docker ps
+  265  curl 0.0.0.0:3000
+  266  curl 10.0.4.1:3000
+  267  curl 10.0.4.5:3000
+  268  curl 10.0.4.254:3000
+  269  curl 10.0.4.254:3000
+  270  curl 10.0.4.1:3000
+  271  curl 10.0.4.2:3000
+  272  curl 10.0.4.1:3000
+  273  ping 10.0.4.1
+  274  curl 10.0.4.1
+  275  curl 10.0.4.1:3000
+  276  curl 10.0.4.1:3000
+  277  ping 10.0.4.1
+  278  curl 10.0.4.1:3000
+  279  ls
+  280  docker ps
+  281  docker inspect dharness_web
+  282  docker ps
+  283  docker inspect 565a4544cff6
+  284  brctl
+  285  brctl show
+  286  ifconfig
+  287  docker network ls
+  288  docker inspect 46a7b84d3dfa
+  289  docker network ls
+  290  docker network rm 46a7b84d3dfa
+  291  docker network rm 46a7b84d3dfa
+  292  docker network ls
+  293  docker network rm 46a7b84d3dfa
+  294  docker network ls
+  295  docker network rm 89f2022890ce
+  296  ifconfig
+  297  docker network ls
+  298  docker inspect 98b7b9d8062a
+  299  docker ps
+  300  docker inspect 565a4544cff6
+  301  docker ps
+  302  curl 10.0.4.2:3000
+  303  docker-compose exec web bash
+  304  curl 127.0.01:3000
+  305  curl 127.0.0.1:3000
+  306  curl 0.0.0.0:3000
+  307  docker inspect --format '{{ .NetworkSettings.Networks.dharness_default.IPAddress }}' 
+  308  docker ps
+  309  docker inspect --format '{{ .NetworkSettings.Networks.dharness_default.IPAddress }}' 565a4544cff6
+  310  docker inspect --format '{{ .NetworkSettings.IPAddress }}' 565a4544cff6
+  311  docker inspect 565a4544cff6
+  312  IRC
+  313  irc
+  314  ping 10.4.0.2
+  315  ping 10.4.0.3
+  316  ping 10.0.4.2
+  317  ping 10.0.4.3
+  318  ping 10.0.4.1
+  319  ifconfig
+  320  sudo apt-get uninstall lxc
+  321  sudo apt-get remove lxc
+  322  ifconfig
+  323  ifconfig
+  324  ip link set dev lxcbr0 down
+  325  ifconfig
+  326  ping 10.0.4.1
+  327  ping 10.0.4.2
+  328  curl 10.0.4.2:3000
+  329  curl 10.0.4.2:3000
+  330  ip link set dev docker0 down
+  331  ifconfig
+  332  curl 10.0.4.2:3000
+  333  ping 10.0.4.1
+  334  docker ps
+  335  docker stats 565a4544cff6
+  336  docker ps
+  337  docker inspect 565a4544cff6
+  338  docker-compose exec web bash
+  339  docker-compose exec web bash
+  340  docker network inspect bridge
+  341  curl 10.0.4.2:3000
+  342  docker network ls
+  343  docker inspect dharness_dylnet
+  344  docker info
+  345  ifconfig
+  346  docker ps
+  347  docker stats 05aa4e45da00
+  348  docker ps
+  349  docker stats ea2766f7fc97
+  350  git init
+  351  git add . --all
+  352  git commit -m '.'
+  353  ls
+  354  git revert
+  355  rm -rf .git
+  356  mkdir app
+  357  cp ./docker-compose.yml ./app/docker-compose.yml
+  358  cp ./web/ ./app/web
+  359  cp -rf ./web/ ./app/web
+  360  cd app
+  361  ls
+  362  cd ..
+  363  rm -rf app
+  364  ls
+  365  git init
+  366  git remote add origin https://github.com/dharness/jaggy-3.git
+  367  git add docker-compose.yml 
+  368  mkdir lab3
+  369  rm -rf .git
+  370  cp docker-compose.yml lab3/docker-compose.yml
+  371  cd lab3/
+  372  git init
+  373  git remote add origin https://github.com/dharness/jaggy-3.git
+  374  docker ps
+  375  touch log-web
+  376  docker ps
+  377  docker inspect dharness_web
+  378  docker inspect dharness_web > log-web 
+  379  docker info > log-docker-info
+  380  ls
+  381  cat log-docker-info 
+  382  docker ps
+  383  docker inspect 86b27708a720 > log-mongo
+  384  cat log-mongo 
+  385  cat log-web
+  386  rm -rf log-web
+  387  docker ps
+  388  docker inspect ea2766f7fc97 > log-web
+  389  cat log-web
+  390  docker logs --details ea2766f7fc97 > log-web-details
+  391  docker ps
+  392  docker logs --details 86b27708a720 > log-mongo-details
+  393  docker ea2766f7fc97 ls -a
+  394  docker container ls -a
+  395  docker ps -a
+  396  cat docker ps -a > log-docker-ps-a
+  397  docker ps -a > log-docker-ps-a
+  398  cat log-docker-ps-a 
+  399  git add . --all
+  400  git commit -m '.'
+  401  git push origin master
+  402  git push origin master
+  403  docker ps
+  404  docker stats ea2766f7fc97
+  405  docker ps
+  406  docker stats ea2766f7fc97 > log-stats-web
+  407  cat log-stats-web 
+  408  cat log-stats-web 
+  409  docker ps
+  410  docker stats 86b27708a720 > log-stats-mongo
+  411  cat log-stats-mongo
+  412  git add . --all
+  413  git commit -m '.'
+  414  git push origin master
+  415  exit
+  416  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add
+  417  ls
+  418  docker-compose up
+  419  sudo lsof -i :27017
+  420  kill 18943
+  421  sudo lsof -i :27017
+  422  docker-compose up
+  423  docker ps 
+  424  vim
+  425  docker-compose up
+  426  vim
+  427  docker-compose --version
+  428  docker --version
+  429  ls /usr/local/bin/docker-compose
+  430  curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  431  chmod +x /usr/local/bin/docker-compose
+  432  docker-compose --version
+  433  docker-compose up
+  434  vim
+  435  docker-compose up
+  436  vim
+  437  vim
+  438  docker-compose up
+  439  vim
+  440  vim
+  441  vim
+  442  ls
+  443  vim
+  444  docker rm -rf $(docker ps -aq)
+  445  docker rm -f $(docker ps -aq)
+  446  docker rmi $(docker images -q)
+  447  docker images
+  448  ls
+  449  mkdir lab4
+  450  cd lab4
+  451  vim docker-compose.yml
+  452  docker-compose up
+  453  ls
+  454  docker-compose exec hadoop bash
+  455  ls
+  456  cd /home/dharness/lab4
+  457  ls
+  458  docker-compose exec hadoop bash
+  459  vim 
+  460  docker-compose exec hadoop bash
+  461  cd $HADOOP_PREFIX
+  462  ls
+  463  cd /home/dharness/lab4
+  464  docker-compose exec hadoop bash
+  465  docker-compose exec hadoop bash
+  466  vim docker-compose.yml 
+  467  docker-compose down
+  468  vim docker-compose.yml 
+  469  docker-compose down
+  470  docker-compose up
+  471  vim docker-compose.yml 
+  472  docker-compose up
+  473  docker-compose up
+  474  vim docker-compose.yml 
+  475  docker-compose up
+  476  vim
+  477  docker-compose up
+  478  vim
+  479  docker-compose up
+  480  ls
+  481  vim
+  482  docker-compose up
+  483  docker-compose up
+  484  docker-compose up
+  485  ls
+  486  cd /homes/dharness/lab4
+  487  cd /homes/dharness/lab4
+  488  cd /home/dharness/lab4
+  489  ls
+  490  vim
+  491  vim
+  492  ./mapper.py
+  493  ls
+  494  mv mappers.py mapper.py 
+  495  mv reducers.py reducer.py 
+  496  docker-compose exec hadoop bash
+  497  docker-compose exec hadoop bash
+  498  docker-compose exec hadoop bash
+  499  ls
+  500  cd lab4
+  501  ls
+  502  docker-compose exec hadoop bash
+  503  docker-compose exec hadoop bash
+  504  ls
+  505  mkdir logs
+  506  rm -rf logs
+  507  history > commands

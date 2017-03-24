@@ -1,0 +1,1 @@
+./../../bin/hadoop jar /usr/local/hadoop-2.7.1/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar -file /usr/local/hadoop/lab4/rank/mapper.py -mapper 'python mapper.py' -file /usr/local/hadoop/lab4/rank/reducer.py -reducer 'python reducer.py' -input input/*.txt -output $1
